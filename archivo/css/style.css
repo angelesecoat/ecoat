@@ -22,7 +22,7 @@
 
 /*===== Fuente y tipografia =====*/
 :root {
-  --body-font: "Helvetica Neue", sans-serif, "Helvetica";
+  --body-font: sans-serif, "Helvetica";
 }
 @media screen and (min-width: 1024px) {
   :root {
@@ -221,21 +221,21 @@ section{
   margin-right: var(--mb-2);
   gap: 3rem;
 }
+
 .historia__img{
   width: 100%;
   max-height: 160px;
+}
+.historia__data{
+  font-weight: 500;
+  font-size: var(--normal-font-size);
+  color: var(--title-color);
 }
 .historia__title{
   font-weight: 700;
   font-size: var(--h2-font-size);
   color: var(--second-color);
 } 
-.historia__data{
-  font-weight: 500;
-  font-size: var(--normal-font-size);
-  color: var(--title-color);
-}
-
 
 /*==== SERVICIOS ====*/
 .servicios__nav{
@@ -283,12 +283,13 @@ section{
 }
 
 .servicios__subtitle{ 
-  font-size: 0.68rem;
+  font-size: 0.638rem;
   font-weight: 300;
   color :rgb(140, 140, 140)
 }
 .servicios__title{
   font-size: var(--h3-font-size);
+  font-weight: 500;
   color: var(--title-color);
   margin: var(--mb-2) 0;
 }
@@ -304,7 +305,7 @@ section{
 /*----- SERVICIO ACTIVO  -----*/
 .active-servicios{
   color: var(--dark-color);
-  font-weight: var(--font-bold);
+  font-weight: 700;
   border-bottom: 2px solid var(--first-color);
 }
 .active-servicios:hover,
@@ -353,6 +354,38 @@ section{
   transform: scale(1.02);
 }
 
+/*===== AVISO LEGAL =====*/
+.asunto-legal{
+  margin-top: 3rem;
+
+  font-family: 'Courier New', Courier, monospace;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: normal;
+}
+.asunto-legal h1 , .asunto-legal h2 ,.asunto-legal h3
+,.asunto-legal p ,.asunto-legal address, .asunto-legal ul,
+.asunto-legal li {
+  margin: 1rem;
+}
+.asunto-legal address {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.asunto-legal li {
+  list-style: circle;
+}
+.web__content {
+  display: none;
+}
+.display-show{
+  display: block;
+}
+.content__link{
+  color: var(--first-color);
+}
+
 /*===== FOOTER =====*/
 footer{
   z-index: var(--z-fixed);
@@ -393,10 +426,10 @@ footer{
   font-size: .8rem;
   word-spacing: .1rem;
 }
-.footer-bottom a{
-  z-index: 3;
+.footer-bottom{
+  z-index: 1;
   color: white;
-  opacity: .4;
+  opacity: .8; 
   font-weight: 200;
 }
 

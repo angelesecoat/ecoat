@@ -16,14 +16,13 @@ showMenu('nav__toggle','nav-menu');
 const navLink = document.querySelectorAll('.nav__link');
 
 function linkAction(){
-    //Active Link
-    navLink.forEach(n => n.classList.remove('active'));
-    this.classList.add('active');
+    //Removes then Active Link
+    //navLink.forEach(n => n.classList.remove('active'));
+    //this.classList.add('active');
 
-    //Remove menu mobile
+    //Hides menu mobile when element clicked
     const navMenu = document.getElementById('nav-menu');
     navMenu.classList.remove('show');
-
 }
 
 navLink.forEach(n => n.addEventListener('click', linkAction))
@@ -37,6 +36,9 @@ const mixer = mixitup('.servicios__container', {
         duration: 400
     }
 });
+//MIXIT UP
+var docWidth = document.documentElement.offsetWidth;
+
 /*link active servicios */
 const linkServicios = document.querySelectorAll('.servicio__item');
 
@@ -47,5 +49,43 @@ function activeServicio(){
     }
 }
 linkServicios.forEach(l => l.addEventListener('click', activeServicio))
-//MIXIT UP
-var docWidth = document.documentElement.offsetWidth;
+
+/////////////////////////////////////////////////////////
+//////////////////// WEB PAGE MANAGER ///////////////////
+/////////////////////////////////////////////////////////
+const links = document.querySelectorAll('.content__link');
+links.forEach(l => l.addEventListener('click', managePages));
+//pages 
+const pages = document.querySelectorAll('.web__content');
+const web = document.getElementById('web');
+const aviso = document.getElementById('aviso-legal');
+const cookies = document.getElementById('politica-cookies');
+const privacidad = document.getElementById('politica-privacidad');
+
+/**
+ * When clicked element of footer shows up the selected content 
+ * @param link 
+ */
+function managePages(){
+    if(pages){
+        pages.forEach(l => l.classList.remove('display-show'))
+        if(this.id === 'web-link'){
+            //console.log(this);
+            web.classList.add('display-show')            
+        }
+        else if(this.id === 'aviso-legal-link'){
+            //console.log(this);
+            aviso.classList.add('display-show')
+        }
+        else if(this.id === 'politica-cookies-link'){
+            //console.log(this);
+            cookies.classList.add('display-show')
+        }
+        else if(this.id === 'politica-privacidad-link'){
+            //console.log(this);
+            privacidad.classList.add('display-show')
+        }
+    }
+}
+
+
